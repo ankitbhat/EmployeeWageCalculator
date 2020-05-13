@@ -14,12 +14,8 @@ public class Employee
 	}
 	public int isPresent()
 	{
-		if(FULLTIME == (int)Math.floor(Math.random() * 100) % 3)
-			return FULLTIME;
-		else if(PARTTIME == (int)Math.floor(Math.random() * 100) % 3)
-			return PARTTIME;
-		else
-			return 0;
+		int temp = (int)Math.floor(Math.random() * 100) % 3;
+		return temp;
 	}
 					
 }

@@ -25,18 +25,20 @@ public class EmployeeWageComp2 implements EmpWageComp
 	@Override
 	public void empCheck()
 	{
-		if(emp2.isPresent() == emp2.getFullTime())
+		switch(emp2.isPresent())
 		{
-			System.out.println("Employee for Company2 is Present and Full Time");
-			System.out.println("Daily Employee Wage for Company2 is :" + dailyFullWage());
+			case 1:
+				System.out.println("Employee for Company2 is Present and Full Time");
+				System.out.println("Daily Employee Wage is :" + dailyFullWage());
+				break;
+			case 2:
+				System.out.println("Employee for Company2 is Present and Part Time");
+				System.out.println("Daily Employee Wage for Company2 is :" + dailyPartWage());
+				break;
+			case 0:
+				System.out.println("Employee for Company2 is Absent");
+				break;
 		}
-		else if(emp2.isPresent() == emp2.getPartTime())
-		{
-			System.out.println("Employee for Company2 is Present and Part Time");
-			System.out.println("Daily Employee Wage for Company2 is :" + dailyPartWage());
-		}
-		else
-			System.out.println("Employee for Company2 is Absent");
 	}	
 }
 

@@ -4,5 +4,6 @@ public interface EmpWageComp
 {
 	public void empCheck();
 	public int dailyFullWage();
+	public int dailyPartWage();
 }
 

@@ -5,6 +5,8 @@ public class EmployeeWageComp2 implements EmpWageComp
 	private static final int WAGEPERHOUR = 30;
 	private static final int FULLTIMEHOURS = 12;
 	private static final int PARTTIMEHOURS = 6;
+	int monthlyWage = 0;
+	int temp = 0;
 
 	@Override
 	public int dailyFullWage()
@@ -25,19 +27,27 @@ public class EmployeeWageComp2 implements EmpWageComp
 	@Override
 	public void empCheck()
 	{
-		switch(emp2.isPresent())
+		for(int i=0;i<20;i++)
 		{
-			case 1:
-				System.out.println("Employee for Company2 is Present and Full Time");
-				System.out.println("Daily Employee Wage is :" + dailyFullWage());
-				break;
-			case 2:
-				System.out.println("Employee for Company2 is Present and Part Time");
-				System.out.println("Daily Employee Wage for Company2 is :" + dailyPartWage());
-				break;
-			case 0:
-				System.out.println("Employee for Company2 is Absent");
-				break;
+			switch(emp2.isPresent())
+			{
+				case 1:
+					System.out.println("Employee for Company2 is Present and Full Time");
+					System.out.println("Daily Employee Wage is :" + dailyFullWage());
+					temp = dailyFullWage();
+					break;
+				case 2:
+					System.out.println("Employee for Company2 is Present and Part Time");
+					System.out.println("Daily Employee Wage for Company2 is :" + dailyPartWage());
+					temp = dailyPartWage();
+					break;
+				case 0:
+					System.out.println("Employee for Company2 is Absent");
+					temp = 0;
+					break;
+			}
+			monthlyWage+=temp;
+			System.out.println("Monthly Wage for Employee of Company2 is :" + monthlyWage);
 		}
 	}	
 }

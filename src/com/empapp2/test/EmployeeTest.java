@@ -6,9 +6,9 @@ public class EmployeeTest
 	public static void main(String[] args)
 	{
 		System.out.println("Welcome to Employee Wage Computation Program");
-		EmpWageComp obj1 = new EmployeeWageComp1();
-		EmpWageComp obj2 = new EmployeeWageComp2();	
-		obj1.empCheck();
-		obj2.empCheck();
+		IempWageComp obj1 = new EmployeeWageComp1();
+		IempWageComp obj2 = new EmployeeWageComp2();	
+		obj1.computeEmpWage();
+		obj2.computeEmpWage();
 	}
 }

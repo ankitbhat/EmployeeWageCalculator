@@ -1,24 +1,28 @@
 package com.empapp2.service;
 import com.empapp2.model.*;
+import java.util.*;
 public class EmployeeWageBuilder implements IempWageComp
 {
 	private int numOfCompanies = 0;
-	private EmpWageCompany[] companyArray;
+	private LinkedList<EmpWageCompany> companyList;
+	private Map<String,EmpWageCompany> companyMap;
 	public EmployeeWageBuilder()
 	{
-		companyArray = new EmpWageCompany[5];
+		companyList = new LinkedList<>();
+		companyMap = new HashMap<>();
 	}
 	public void addEmpWageCompany(String company, int wagePerHour,int fullTimeHours, int partTimeHours, int numOfWorkingDays, int maxWorkingHours)
 	{
-		companyArray[numOfCompanies] = new EmpWageCompany(company, wagePerHour, fullTimeHours, partTimeHours, numOfWorkingDays, maxWorkingHours);
-		numOfCompanies++;
+		EmpWageCompany emp = new EmpWageCompany(company, wagePerHour, fullTimeHours, partTimeHours, numOfWorkingDays, maxWorkingHours);
+		companyList.add(emp);
+		companyMap.put(company, emp);
 	}
 	public void computeEmpWage()
 	{
-		for(int i=0; i< numOfCompanies; i++)
+		for(int i=0; i< companyList.size(); i++)
 		{
-			companyArray[i].setTotalEmpWage(this.computeEmpWage(companyArray[i]));
-			System.out.println(companyArray[i]);
+			companyList.get(i).setTotalEmpWage(this.computeEmpWage(companyList.get(i)));
+			System.out.println(companyList.get(i));
 		}
 	}
 	public int isPresent()

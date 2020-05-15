@@ -73,14 +73,17 @@ public class EmployeeWageBuilder implements IempWageComp
 					break;
 			}
 			comp.totalEmpWage+=temp;
+			comp.dailyWage.add(temp);
 			System.out.println("Total Hours :" + hours);
 			System.out.println("Total Days :" + days);
 			System.out.println("Cumulative Wage for Employee of Company :" + comp.company +" is " + comp.totalEmpWage);
 			days++;
 		}
+		comp.getDailyWage();
 		if(hours>comp.maxWorkingHours)
 			comp.totalEmpWage -= (hours-comp.maxWorkingHours)*comp.wagePerHour;
 		return comp.totalEmpWage;
+		
 	}
 }
 

@@ -1,4 +1,5 @@
 package com.empapp2.model;
+import java.util.*;
 public class EmpWageCompany
 {
 	public String company;
@@ -8,6 +9,7 @@ public class EmpWageCompany
 	public final int numOfWorkingDays;
 	public final int maxWorkingHours;
 	public int totalEmpWage;
+	public List<Integer> dailyWage = new ArrayList<>();
 	
 	public EmpWageCompany(String company, int wagePerHour,int fullTimeHours, int partTimeHours, int numOfWorkingDays, int maxWorkingHours)
 	
@@ -23,7 +25,11 @@ public class EmpWageCompany
 	{
 		this.totalEmpWage = totalEmpWage;
 	}
-	
+	public void getDailyWage()
+	{
+		System.out.println("Daily Wages :" + dailyWage);
+	}
+
 	@Override
 	public String toString()
 	{

@@ -6,5 +6,6 @@ public interface IempWageComp
 	public void computeEmpWage();
 	public int dailyFullWage(EmpWageCompany emp);
 	public int dailyPartWage(EmpWageCompany emp);
+	public int getTotalWage(String company);
 }
 

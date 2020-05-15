@@ -2,7 +2,7 @@ package com.empapp2.model;
 import java.util.*;
 public class EmpWageCompany
 {
-	public String company;
+	public final String company;
 	public final int wagePerHour;
 	public final int fullTimeHours;
 	public final int partTimeHours;

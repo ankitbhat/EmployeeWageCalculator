@@ -10,5 +10,6 @@ public class EmployeeTest
 		obj.addEmpWageCompany("Microsoft", 20, 8, 4, 22, 100);
 		obj.addEmpWageCompany("Google", 30, 12, 6, 24, 120);
 		obj.computeEmpWage();
+		System.out.println("Total wage for Company Microsoft is :" + obj.getTotalWage("Microsoft"));
 	}
 }

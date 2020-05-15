@@ -46,6 +46,11 @@ public class EmployeeWageBuilder implements IempWageComp
 		dailyEmpWage =(obj.partTimeHours*obj.wagePerHour);
 		return dailyEmpWage;
 	}
+	@Override
+	public int getTotalWage(String company)
+	{
+		return companyMap.get(company).totalEmpWage;
+	}
 	public int computeEmpWage(EmpWageCompany comp)
 	{
 		int temp = 0;
